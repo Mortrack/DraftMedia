@@ -1,0 +1,99 @@
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+// We define the PROPERTIES of all the BODY of our view file
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+
+// ----- RESERVED CLASSES FOR JAVASCRIPT ----- //
+// This classes were used on js code because i wanted to iterate all the possible
+// changes with the ".on()" js function to not code 8 times the same thing for each one
+// of them. But the problem was that the iteration didn't work with the use of id's, but
+// it did with the use of classes for some reason.
+//.secQuan -> #sectionQuantity-Input
+//.rArtC -> #refArtisticConcept-Input
+//.rAniC -> #refAnimationConcept-Input
+//.uothC -> #userOtherConcept-Input
+
+// ----- General Settings ----- //
+.dea-bg
+  background-image: url("/img/home/textura-grecia.jpg")
+  background-size: 30%
+  background-attachment: scroll
+  background-repeat: repeat
+  background-position: center center
+.C-horizontalAlignCenter
+  display: flex
+  flex-direction: row
+  justify-content: center
+.C-verticalAlignCenter
+  display: flex
+  flex-direction: row
+  align-items: center
+.C-verticalAlignEnd
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+.logo-container
+  left: 50px
+  position: absolute
+  top: 20px
+  z-index: 3
+.logo-container:hover
+  box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07)
+.C-goBackHover:hover
+  color: #1B1B1B
+.logo-container .brand
+  font-size: 18px
+  color: #FFF
+  line-height: 20px
+  float: left
+  margin-left: 10px
+  margin-top: 10px
+  width: 60px
+.input-border-bottom
+  border-bottom: 1px solid #000000
+
+// ----- DEA Modal GENERAL SETTINGS----- //
+// ----- DEA Modal: Servicio ----- //
+.title-margins
+  margin-top: 50px
+  margin-bottom: 0px
+.C-disable-minusLg
+  //This code was applied from JS because CSS styles werent being applied well because of CSS framework
+@media screen and (min-width: 1200px)
+  .C-col-xl-6
+    //This code was applied from JS because CSS styles werent being applied well because of CSS framework
+
+// ----- DEA Modal: Sitio Web (Generales) ----- //
+.position-fix
+  position: relative
+  bottom: 15px
+.title-margins2
+  padding-right: 10%
+  padding-left: 10%
+  font-size: 9pt
+  font-style: italic
+.title-margins3
+  padding-right: 10%
+  padding-left: 10%
+.dot-colorSample
+  height: 40px
+  width: 40px
+  border-radius: 50%
+  display: inline-block
+
+// ----- DEA Modal: Sitio Web (Detalles) ----- //
+.tab-items
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  padding: 0px
+  margin: 0px
+  list-style: none
+  justify-content: center
+.tab-item
+  padding: 4px 10px
+  font-size: 16px
+  display: inline-block
+//https://fontawesome.bootstrapcheatsheets.com/#

@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block styles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS Files -->
+    <link href="/css/Admin/Login/layout.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/Bootstrap/bootstrap.min.css">
+    <script src="/js/jquery-3.1.1.min.js"></script>
+{% endblock %}
+
+{% block title %}Draft Media: Admin Login{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block body %}
+    {% include('/Admin/Login/body.html.twig') %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block javascript %}
+    <script src="/js/jquery-3.1.1.min.js"></script>
+    <script src="/js/Bootstrap/bootstrap.min.js"></script>
+    <!-- JS CUSTOMIZED FILES -->
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/Admin/Login/index.js"></script>
+{% endblock %}

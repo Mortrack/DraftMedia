@@ -1,0 +1,278 @@
+
+<main>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="#" class="simple-text logo-normal dashBoard-TitleText">
+                        DraftMedia
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-documents-80.png" width="27px"></i>
+                            <p>Resumen</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-money-bag-80.png" width="27px"></i>
+                            <p>Utilidades</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-total-sales-50.png" width="27px"></i>
+                            <p>Ventas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-paycheque-64.png" width="27px"></i>
+                            <p>Gastos</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-client-management-50.png" width="27px"></i>
+                            <p>Clientes</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-course-assign-50.png" width="27px"></i>
+                            <p>Tareas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-new-post-50.png" width="27px"></i>
+                            <p>Correo</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tim-icons icon-world"></i>
+                            <p>Admin. de Pág.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+            <div class="content">
+                {#<div class="row">#}
+                    {#<div class="col-12">#}
+                        {#<div class="card card-chart">#}
+                            {#<div class="card-header ">#}
+                                {#<div class="row">#}
+                                    {#<div class="col-sm-6 text-left">#}
+                                        {#<h5 class="card-category">Mensajes en {{ actualYear }} (Contáctanos)</h5>#}
+                                        {#<h2 class="card-title"><span id="total_annualMsgs">0</span> Mensajes</h2>#}
+                                    {#</div>#}
+                                    {#<div class="col-sm-6">#}
+                                        {#<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">#}
+                                            {#<label class="btn btn-sm btn-primary btn-simple active">#}
+                                                {#<input type="radio" name="options" autocomplete="off" id="receivedMessages-label" checked> Mensajes Recibidos#}
+                                            {#</label>#}
+                                            {#<label class="btn btn-sm btn-primary btn-simple " id="2">#}
+                                                {#<input type="radio" name="options" autocomplete="off" id="attendedMessages-label"> Mensajes Atendidos#}
+                                            {#</label>#}
+                                        {#</div>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<div class="card-body">#}
+                                {#<div class="chart-area" id="chartBig1-container">#}
+                                    {#<canvas id="chartBig1"></canvas>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Visitantes en linea (Auth. y Anon.)</h5>
+                                <h3 class="card-title" style="color: #33dba9;"><span>{{ usersOnline }}</span> Visitantes en Linea</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Usuarios Autenticados en linea</h5>
+                                <h3 class="card-title" style="color: #33dba9;"><span>{{ authUsersOnline }}</span> Usuarios Aut. en Linea</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Número total de visitantes (Auth. y Anon.)</h5>
+                                <h3 class="card-title" style="color: #2097ee;"><span>{{ totalVisitors }}</span> Visitantes Totales</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Número total de cuentas de usuario</h5>
+                                <h3 class="card-title" style="color: #2097ee;"><span>{{ numberOfUserAccounts }}</span> Cuentas</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Porcentaje de Visitantes Nuevos (Auth. y Anon.)</h5>
+                                <h3 class="card-title" style="color: #e67300;">{{ porcentageOfNewVisitors }}</span> %</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Porcentaje de Visitantes de Regreso (Auth. y Anon.)</h5>
+                                <h3 class="card-title" style="color: #e67300;">{{ porcentageOfReturningVisitors }}</span> %</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Sesiones realizadas por usuario</h5>
+                                <h3 class="card-title"><span>{{ sessionsPerUser }}</span> Sesiones/Usuario</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Duración promedio por Sesión</h5>
+                                <h3 class="card-title"><span>{{ durationPerSession }}</span> Segundos/Sesión</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Duración promedio por visitante (auth. y anon.)</h5>
+                                <h3 class="card-title"><span>{{ durationPerVisitor }}</span> Segundos/Visitante</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Vistas Totales a Páginas (Auth. y Anon.)</h5>
+                                <h3 class="card-title" style="color: #d048b6;"><span>{{ totalNumberOfViewsToPages }}</span> Páginas Vistas Totales</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Páginas Vistas por Sesión</h5>
+                                <h3 class="card-title" style="color: #d048b6;"><span>{{ viewsPerSession }}</span> Páginas Vistas/Sesión</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Páginas Vistas por visitante (auth. y anon.)</h5>
+                                <h3 class="card-title" style="color: #d048b6;"><span>{{ pagesViewedPerVisitor }}</span> Páginas Vistas/Visitante</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+
+
+
+
+
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Usuarios Autenticados en linea</h5>
+                                <h3 class="card-title"><span id="avg_weeklyReceivedMsgs">0</span> Mensajes</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartSmall3"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Mensajes Recibidos en esta Semana (Contáctanos)</h5>
+                                <h3 class="card-title"><span id="total_weeklyReceivedMsgs">0</span> Mensajes</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartSmall1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Mensajes Atendidos en esta Semana (Contáctanos)</h5>
+                                <h3 class="card-title"><span id="total_weeklyAttendedMsgs">0</span> Mensajes</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartSmall2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title title-text" id="modalTitle-Text"></h5>
+                    <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 pl-4 pr-4 text-justify content-text C-text-darkgray" id="modalMessage-Text"></div>
+                    <div class="text-center mb-2" id="modalIcon-Image"></div>
+                    <div class="modal-footer justify-content-center">
+                        <button id="btn-modalGotIt" type="button" class="btn title-text text-white">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

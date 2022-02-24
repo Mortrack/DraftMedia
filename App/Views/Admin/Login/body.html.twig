@@ -1,0 +1,70 @@
+
+<main class="bg-dark window-height">
+    <div class="content">
+        <div class="row window-height justify-content-center">
+            <div class="col-9 col-lg-5">
+                <div class="col-12 text-center mt-5 pt-5">
+                    <img class="mt-5 pt-5 mb-5 pb-5" src="/img/Logo/DraftMediaLogo.png" width="200px">
+                </div>
+                <form class="" role="form">
+                    <div class="row">
+                        <div class="col-12 text-center pb-3">
+                            <h2 class="title-text text-white pt-2">Admin Login</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12">
+                            <div class="input-outer-border">
+                                <div class="input-group input-inner-border input-group-alternative">
+                                    <input class="input-color form-control back-modal-bg-inputs content-text" id="email-input" placeholder="Username" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-12 pb-2">
+                            <div class="input-outer-border">
+                                <div class="input-group input-inner-border input-group-alternative">
+                                    <input class="input-color form-control back-modal-bg-inputs content-text" id="password-input" placeholder="Password" type="password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div style="opacity: 0.8;" class="col-12 text-left text-warning content-text">
+                            <!-- Los elementos list-items los agregaremos con javascript -->
+                            <ul class="error" id="errors-container"></ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center col-12">
+                            <button type="button" class="btn btn-info pb-3 pt-3 btn-block title-text" id="Login-btn" style="color: #1B1B1B;">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle-Text"></h5>
+                    <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 pl-4 pr-4 text-justify" id="modalMessage-Text"></div>
+                    <div class="text-center mb-2" id="modalIcon-Image"></div>
+                    <div class="modal-footer justify-content-center">
+                        <button id="btn-modalGotIt" type="button" class="btn">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

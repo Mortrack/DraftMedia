@@ -1,0 +1,212 @@
+
+<main>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="#" class="simple-text logo-normal dashBoard-TitleText">
+                        DraftMedia
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-documents-80.png" width="27px"></i>
+                            <p>Resumen</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-money-bag-80.png" width="27px"></i>
+                            <p>Utilidades</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-total-sales-50.png" width="27px"></i>
+                            <p>Ventas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-paycheque-64.png" width="27px"></i>
+                            <p>Gastos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-client-management-50.png" width="27px"></i>
+                            <p>Clientes</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-course-assign-50.png" width="27px"></i>
+                            <p>Tareas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-new-post-50.png" width="27px"></i>
+                            <p>Correo</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tim-icons icon-world"></i>
+                            <p>Admin. de Pág.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <div class="row">
+                                    <div class="col-sm-6 text-left">
+                                        <h5 class="card-category">Mensajes en {{ actualYear }} (Contáctanos)</h5>
+                                        <h2 class="card-title"><span id="total_annualMsgs">0</span> Mensajes</h2>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                                            <label class="btn btn-sm btn-primary btn-simple active">
+                                                <input type="radio" name="options" autocomplete="off" id="receivedMessages-label" checked> Mensajes Recibidos
+                                            </label>
+                                            <label class="btn btn-sm btn-primary btn-simple " id="2">
+                                                <input type="radio" name="options" autocomplete="off" id="attendedMessages-label"> Mensajes Atendidos
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area" id="chartBig1-container">
+                                    <canvas id="chartBig1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Promedio - Msgs Recibidos/día (Contáctanos)</h5>
+                                <h3 class="card-title"><span id="avg_weeklyReceivedMsgs">0</span> Mensajes</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartSmall3"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Mensajes Recibidos en esta Semana (Contáctanos)</h5>
+                                <h3 class="card-title"><span id="total_weeklyReceivedMsgs">0</span> Mensajes</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartSmall1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Mensajes Atendidos en esta Semana (Contáctanos)</h5>
+                                <h3 class="card-title"><span id="total_weeklyAttendedMsgs">0</span> Mensajes</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartSmall2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-tasks">
+                            <div class="card-header ">
+                                <h6 class="title d-inline">Mensajes de sección Contáctanos <span class="badge badge-secondary">{{ numberOfMessages }}</span></h6>
+                                <!--
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
+                                        <i class="tim-icons icon-settings-gear-63"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Agregar Tarea</a>
+                                        <a class="dropdown-item" href="#">Limpiar Tareas Completadas</a>
+                                        <a class="dropdown-item" href="#">Ir a Administrador de Tareas</a>
+                                    </div>
+                                </div>
+                                -->
+                            </div>
+                            <div class="card-body ">
+                                <div class="table-full-width table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th>¿Mensaje Atendido?</th>
+                                            <th>Fecha</th>
+                                            <th>Mensaje</th>
+                                            <!--<th>¿Borrar?</th>-->
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {{ HTML | raw}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title title-text" id="modalTitle-Text"></h5>
+                    <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3 pl-4 pr-4 text-justify content-text C-text-darkgray" id="modalMessage-Text"></div>
+                    <div class="text-center mb-2" id="modalIcon-Image"></div>
+                    <div class="modal-footer justify-content-center">
+                        <button id="btn-modalGotIt" type="button" class="btn title-text text-white">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

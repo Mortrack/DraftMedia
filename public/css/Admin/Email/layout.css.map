@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAiBA,QAAQ,CACN,KAAK,CAAE,OAAO,CACd,cAAO,CACL,KAAK,CAAE,IAAO,CAElB,oBAAoB,CAClB,UAAU,CAAE,MAAM,CACpB,oCAAoC,CAClC,qCAAqC,CACnC,UAAU,CAAE,KAAK",
+"sources": ["_body.sass"],
+"names": [],
+"file": "layout.css"
+}

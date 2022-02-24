@@ -1,0 +1,86 @@
+
+{% if language == 'spanish'%}
+<main>
+    <section class="loginView-bg" style="padding: 0px; margin: 0px;">
+        <div class="container" id="container" style="padding-top: 0px; height: 100vh;">
+            <div class="row justify-content-center pt-2 pb-5" id="contentModal">
+                <div class="row bg-white shadow border-0 C-horizontalAlignCenter" style="width: 100%;">
+                    <div class="text-center mt-5 mb-3" style="width: 80%;">
+                        {#<div class="table-responsive">#}
+                            <table id="userRequests-table" class="table table-striped table-hover table-bordered dt-responsive display" style="width: 90%;">
+                                <thead>
+                                <tr class="content-text C-text-black C-bg-lightgray">
+                                    <th class="text-center fontsize_16px">Fecha de Creación</th>
+                                    <th class="text-center fontsize_16px">Nombre de Beneficiario</th>
+                                    <th class="text-center fontsize_16px">Servicio Requerido</th>
+                                    <th class="text-center fontsize_16px">Paquete Requerido</th>
+                                    <th class="text-center fontsize_16px">Estado del Servicio</th>
+                                    <th class="text-center fontsize_16px">Pago de Apertura</th>
+                                    <th class="text-center fontsize_16px">Servicio Activo hasta</th>
+                                    <th class="text-center fontsize_16px">Ver Detalles</th>
+                                    <th class="text-center fontsize_16px">Subir Archivos</th>
+                                    <th class="text-center fontsize_16px">Métodos de Pago</th>
+                                </tr>
+                                </thead>
+                                <tbody id="userRequests-container">
+                                <!-- Table's body content is injected via Javascript -->
+                                {{ HTML | raw }}
+                                </tbody>
+                            </table>
+                        {#</div>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+
+{% if language == 'english'%}
+    <main>
+        <section class="loginView-bg" style="padding: 0px; margin: 0px;">
+            <div class="container" id="container" style="padding-top: 0px; height: 100vh;">
+                <div class="row justify-content-center pt-2 pb-5" id="contentModal">
+                    <div class="row bg-white shadow border-0 C-horizontalAlignCenter" style="width: 100%;">
+                        <div class="text-center mt-5 mb-3" style="width: 80%;">
+                            {#<div class="table-responsive">#}
+                            <table id="userRequests-table" class="table table-striped table-hover table-bordered dt-responsive display" style="width: 90%;">
+                                <thead>
+                                <tr class="content-text C-text-black C-bg-lightgray">
+                                    <th class="text-center fontsize_16px">Creation Date</th>
+                                    <th class="text-center fontsize_16px">Name of Beneficiary</th>
+                                    <th class="text-center fontsize_16px">Service Required</th>
+                                    <th class="text-center fontsize_16px">Package Required</th>
+                                    <th class="text-center fontsize_16px">Service Status</th>
+                                    <th class="text-center fontsize_16px">Opening Payment</th>
+                                    <th class="text-center fontsize_16px">Service Active up to</th>
+                                    <th class="text-center fontsize_16px">See Details</th>
+                                    <th class="text-center fontsize_16px">Upload Files</th>
+                                    <th class="text-center fontsize_16px">Paymen Methods</th>
+                                </tr>
+                                </thead>
+                                <tbody id="userRequests-container">
+                                <!-- Table's body content is injected via Javascript -->
+                                {{ HTML | raw }}
+                                </tbody>
+                            </table>
+                            {#</div>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endif %}
+
+<!-- Loading Screen -->
+<div class="modal fade" id="loadingScreen" tabindex="-1" role="dialog" aria-labelledby="loadingScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; top: -50%;">
+        <div class="C-horizontalAlignCenter">
+            <div class="modal-header" style="visibility: hidden;">
+                <button id="btn-LoadingScreenClose" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <img src="/img/loadingScreen/Spin.gif" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+</div>

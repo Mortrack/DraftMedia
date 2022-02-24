@@ -1,0 +1,31 @@
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+// We define the PROPERTIES of all the BODY of our view file
+// ----------------------------------------------------------------------------------- //
+// ----------------------------------------------------------------------------------- //
+
+// ----- RESERVED CLASSES FOR JAVASCRIPT ----- //
+// This classes were used on js code because i wanted to iterate all the possible
+// changes with the ".on()" js function to not code 8 times the same thing for each one
+// of them. But the problem was that the iteration didn't work with the use of id's, but
+// it did with the use of classes for some reason.
+//.contactUs_isAttended
+//.readContactUsMessage
+//.contactUsMessage
+
+
+// ----- Side bar ----- //
+.dB-tool
+  color: #9A9A9A
+  &:hover
+    color: #FFFFFF
+
+.dashBoard-TitleText
+  text-align: center
+@media screen and (max-width: 991px)
+  .sidebar-wrapper .dashBoard-TitleText
+    text-align: start
+
+// ----- Back Login Modal ----- //
+//.back-modal-height
+//  height: 360px

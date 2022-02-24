@@ -1,0 +1,439 @@
+
+<main>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="blue">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="#" class="simple-text logo-normal dashBoard-TitleText">
+                        DraftMedia
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="active ">
+                        <a href="#">
+                            {#<i class="tim-icons icon-chart-pie-36"></i>#}
+                            <i><img src="/img/icons/icons8-documents-80.png" width="27px"></i>
+                            <p>Resumen</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-money-bag-80.png" width="27px"></i>
+                            <p>Utilidades</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-total-sales-50.png" width="27px"></i>
+                            <p>Ventas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-paycheque-64.png" width="27px"></i>
+                            <p>Gastos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-client-management-50.png" width="27px"></i>
+                            <p>Clientes</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-course-assign-50.png" width="27px"></i>
+                            <p>Tareas</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i><img src="/img/icons/icons8-new-post-50.png" width="27px"></i>
+                            <p>Correo</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="tim-icons icon-world"></i>
+                            <p>Admin. de Pág.</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="tim-icons icon-simple-remove"></i>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <div class="row">
+                                    <div class="col-sm-6 text-left">
+                                        <h5 class="card-category">Utilidad Neta Anual</h5>
+                                        <h2 class="card-title">$ 5'897.23 MXN</h2>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                                            <label class="btn btn-sm btn-primary btn-simple active" id="0">
+                                                <input type="radio" name="options" autocomplete="off" checked> Utilidad Neta
+                                            </label>
+                                            <label class="btn btn-sm btn-primary btn-simple " id="1">
+                                                <input type="radio" name="options" autocomplete="off"> Compras
+                                            </label>
+                                            <label class="btn btn-sm btn-primary btn-simple " id="2">
+                                                <input type="radio" name="options" autocomplete="off"> Sesiones
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas id="chartBig1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Utilidad Bruta en 6 meses</h5>
+                                <h3 class="card-title">$ 763'215 MXN</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartLinePurple"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Utilidad Bruta semanal</h5>
+                                <h3 class="card-title">$ 1'837.46 MXN</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="CountryChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-chart">
+                            <div class="card-header ">
+                                <h5 class="card-category">Tareas Completadas en 6 meses</h5>
+                                <h3 class="card-title"><i class="tim-icons icon-send text-success "></i> 12'100 tareas</h3>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart-area">
+                                    <canvas id="chartLineGreen"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card card-tasks">
+                            <div class="card-header ">
+                                <h6 class="title d-inline">Tareas <span class="badge badge-secondary" id="contador-Tareas">5</span></h6>
+                                <p class="card-category d-inline">Hoy</p>
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-link dropdown-toggle btn-icon" data-toggle="dropdown">
+                                        <i class="tim-icons icon-settings-gear-63"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Agregar Tarea</a>
+                                        <a class="dropdown-item" href="#">Limpiar Tareas Completadas</a>
+                                        <a class="dropdown-item" href="#">Ir a Administrador de Tareas</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body ">
+                                <div class="table-full-width table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="title">Update the Documentation</p>
+                                                <p class="text-muted">Dwuamish Head, Seattle, WA 8:47 AM</p>
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                                                    <i class="tim-icons icon-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="" checked="">
+                                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="title">GDPR Compliance</p>
+                                                <p class="text-muted">The GDPR is a regulation that requires businesses to protect the personal data and privacy of Europe citizens for transactions that occur within EU member states.</p>
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                                                    <i class="tim-icons icon-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="title">Solve the issues</p>
+                                                <p class="text-muted">Fifty percent of all respondents said they would be more likely to shop at a company </p>
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                                                    <i class="tim-icons icon-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="title">Release v2.0.0</p>
+                                                <p class="text-muted">Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM</p>
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                                                    <i class="tim-icons icon-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="title">Export the processed files</p>
+                                                <p class="text-muted">The report also shows that consumers will not easily forgive a company once a breach exposing their personal data occurs. </p>
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                                                    <i class="tim-icons icon-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" value="">
+                                                        <span class="form-check-sign">
+                                <span class="check"></span>
+                              </span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="title">Arival at export process</p>
+                                                <p class="text-muted">Capitol Hill, Seattle, WA 12:34 AM</p>
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="" class="btn btn-link" data-original-title="Edit Task">
+                                                    <i class="tim-icons icon-pencil"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card ">
+                            <div class="card-header">
+                                <h4 class="card-title">Ventas Más Recientes</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table tablesorter " id="">
+                                        <thead class=" text-primary">
+                                        <th>
+                                            Cliente
+                                        </th>
+                                        <th>
+                                            País
+                                        </th>
+                                        <th>
+                                            Ciudad
+                                        </th>
+                                        <th class="text-center">
+                                            Venta (MXN)
+                                        </th>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                Dakota Rice
+                                            </td>
+                                            <td>
+                                                Niger
+                                            </td>
+                                            <td>
+                                                Oud-Turnhout
+                                            </td>
+                                            <td class="text-center">
+                                                $36,738
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Minerva Hooper
+                                            </td>
+                                            <td>
+                                                Curaçao
+                                            </td>
+                                            <td>
+                                                Sinaai-Waas
+                                            </td>
+                                            <td class="text-center">
+                                                $23,789
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Sage Rodriguez
+                                            </td>
+                                            <td>
+                                                Netherlands
+                                            </td>
+                                            <td>
+                                                Baileux
+                                            </td>
+                                            <td class="text-center">
+                                                $56,142
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Philip Chaney
+                                            </td>
+                                            <td>
+                                                Korea, South
+                                            </td>
+                                            <td>
+                                                Overland Park
+                                            </td>
+                                            <td class="text-center">
+                                                $38,735
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Doris Greene
+                                            </td>
+                                            <td>
+                                                Malawi
+                                            </td>
+                                            <td>
+                                                Feldkirchen in Kärnten
+                                            </td>
+                                            <td class="text-center">
+                                                $63,542
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Mason Porter
+                                            </td>
+                                            <td>
+                                                Chile
+                                            </td>
+                                            <td>
+                                                Gloucester
+                                            </td>
+                                            <td class="text-center">
+                                                $78,615
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Jon Porter
+                                            </td>
+                                            <td>
+                                                Portugal
+                                            </td>
+                                            <td>
+                                                Gloucester
+                                            </td>
+                                            <td class="text-center">
+                                                $98,615
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

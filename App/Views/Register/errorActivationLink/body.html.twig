@@ -1,0 +1,42 @@
+
+{% if language == 'spanish'%}
+<main>
+    <section class="mt-5 pt-5">
+        <div class="container mb-5 pb-5">
+            <div class="row justify-content-center bg-danger">
+                <div class="col-8 text-center">
+                    <h2 class="text-white h1 pt-2 pb-3">ERROR</h2>
+                    <h3 class="h4 pb-2">La cuenta que solicitó ser activada, en DraftMedia, no ha sido registrada o ya fue activada</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+
+{% if language == 'english'%}
+    <main>
+        <section class="mt-5 pt-5">
+            <div class="container mb-5 pb-5">
+                <div class="row justify-content-center bg-danger">
+                    <div class="col-8 text-center">
+                        <h2 class="text-white h1 pt-2 pb-3">ERROR</h2>
+                        <h3 class="h4 pb-2">The account that was requested to be activated, in DraftMedia, has not been registered or has already been activated</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endif %}
+
+<!-- Loading Screen -->
+<div class="modal fade" id="loadingScreen" tabindex="-1" role="dialog" aria-labelledby="loadingScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; top: -50%;">
+        <div class="C-horizontalAlignCenter">
+            <div class="modal-header" style="visibility: hidden;">
+                <button id="btn-LoadingScreenClose" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <img src="/img/loadingScreen/Spin.gif" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+
+{% if language == 'spanish'%}
+<main>
+    <section class="DEA_Upload-Container">
+        <div class="dea-bg">
+            <!--   Go to User's Requested Services   -->
+            <a href="#" id="MyRequestedServices-Link">
+                <div class="logo-container C-verticalAlignCenter">
+                    <div>
+                        <img src="/img/icons/icons8-go-back-96.png" width="80%">
+                    </div>
+                    <div class="title-text C-text-darkgray C-goBackHover">
+                        <span>Subir archivos después</span>
+                    </div>
+                </div>
+            </a>
+
+            <!--  Credits to Creative Tim for usage of Themes  -->
+            <a href="https://www.creative-tim.com/" target="_blank" class="made-with-mk">
+                <div class="brand">MK</div>
+                <div class="made-with" style="font-size: 9pt;"><strong>Creative Tim CSS Framework</strong></div>
+            </a>
+
+            <!--   Big container   -->
+            <div class="container" style="margin-bottom: 0px; padding-bottom: 50px;">
+                <div class="row" style="display: flex; justify-content: center; margin-top: 50px;">
+                    <div class="col-md-9" id="wizard-container">
+                        <div class="modal-dialog" style="min-height: 100vh; width: 100%; margin-top: 15%;">
+                            <div class="modal-content">
+                                <div class="row text-center mb-5">
+                                    <h2 class="title-text C-text-black">
+                                        DEA TOOL
+                                    </h2>
+                                    <h5 class="content-text C-text-darkgray">Esta información nos permitirá entender mejor tu idea.</h5>
+                                    <div class="C-horizontalAlignCenter">
+                                        <div style="background:#F2F2F2; height: 30px; width: 90%;"></div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div id="uploadFiles-Container">
+                                    <!-- Here lies all the uploaders of all the files that the user has to upload to
+                                    complete the request of the service he wants from DraftMedia -->
+                                        {{ HTML | raw }}
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div style="padding-bottom: 30px;">
+                                        <div style="margin-right: 5%;">
+                                            <button class='btn btn-finish btn-fill btn-danger btn-wd' id="Finish_Btn" style="float: right;">
+                                                <span style="color:#ffffff;">TERMINAR</span>
+                                            </button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!--  big container -->
+
+        </div>
+
+        <!-- Message Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title title-text" id="modalTitle-Text"></h5>
+                        <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 pl-4 pr-4 text-justify content-text C-text-darkgray" id="modalMessage-Text"></div>
+                        <div class="text-center mb-2" id="modalIcon-Image"></div>
+                        <div class="modal-footer justify-content-center">
+                            <button id="btn-modalGotIt" type="button" class="btn title-text text-white">Entendido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+
+{% if language == 'english'%}
+    <main>
+        <section class="DEA_Upload-Container">
+            <div class="dea-bg">
+                <!--   Go to User's Requested Services   -->
+                <a href="#" id="MyRequestedServices-Link">
+                    <div class="logo-container C-verticalAlignCenter">
+                        <div>
+                            <img src="/img/icons/icons8-go-back-96.png" width="80%">
+                        </div>
+                        <div class="title-text C-text-darkgray C-goBackHover">
+                            <span>Upload files later</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!--  Credits to Creative Tim for usage of Themes  -->
+                <a href="https://www.creative-tim.com/" target="_blank" class="made-with-mk">
+                    <div class="brand">MK</div>
+                    <div class="made-with" style="font-size: 9pt;"><strong>Creative Tim CSS Framework</strong></div>
+                </a>
+
+                <!--   Big container   -->
+                <div class="container" style="margin-bottom: 0px; padding-bottom: 50px;">
+                    <div class="row" style="display: flex; justify-content: center; margin-top: 50px;">
+                        <div class="col-md-9" id="wizard-container">
+                            <div class="modal-dialog" style="min-height: 100vh; width: 100%; margin-top: 15%;">
+                                <div class="modal-content">
+                                    <div class="row text-center mb-5">
+                                        <h2 class="title-text C-text-black">
+                                            DEA TOOL
+                                        </h2>
+                                        <h5 class="content-text C-text-darkgray">This information will allow us to better understand your idea.</h5>
+                                        <div class="C-horizontalAlignCenter">
+                                            <div style="background:#F2F2F2; height: 30px; width: 90%;"></div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div id="uploadFiles-Container">
+                                            <!-- Here lies all the uploaders of all the files that the user has to upload to
+                                            complete the request of the service he wants from DraftMedia -->
+                                            {{ HTML | raw }}
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div style="padding-bottom: 30px;">
+                                            <div style="margin-right: 5%;">
+                                                <button class='btn btn-finish btn-fill btn-danger btn-wd' id="Finish_Btn" style="float: right;">
+                                                    <span style="color:#ffffff;">FINISH</span>
+                                                </button>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- row -->
+                </div> <!--  big container -->
+
+            </div>
+
+            <!-- Message Modal -->
+            <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title title-text" id="modalTitle-Text"></h5>
+                            <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3 pl-4 pr-4 text-justify content-text C-text-darkgray" id="modalMessage-Text"></div>
+                            <div class="text-center mb-2" id="modalIcon-Image"></div>
+                            <div class="modal-footer justify-content-center">
+                                <button id="btn-modalGotIt" type="button" class="btn title-text text-white">Understood</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endif %}
+
+<!-- Loading Screen -->
+<div class="modal fade" id="loadingScreen" tabindex="-1" role="dialog" aria-labelledby="loadingScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="C-horizontalAlignCenter">
+            <div class="modal-header" style="visibility: hidden;">
+                <button id="btn-LoadingScreenClose" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <img src="/img/loadingScreen/Spin.gif" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+</div>

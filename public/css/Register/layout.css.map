@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAWA,UAAO,CAEL,UAAU,CAAE,iCAAiC,CAC7C,KAAK,CAAE,IAAI,CACX,aAAa,CAAE,IAAI,CAErB,oCAAoC,CAClC,kBAAkB,CAChB,KAAK,CAAE,OAAO,ECZlB,gBAAgB,CACd,gBAAgB,CAAE,mCAAmC,CACrD,eAAe,CAAE,GAAG,CACpB,qBAAqB,CAAE,MAAM,CAC7B,iBAAiB,CAAE,MAAM,CACzB,mBAAmB,CAAE,aAAa",
+"sources": ["_header.sass","_body.sass"],
+"names": [],
+"file": "layout.css"
+}

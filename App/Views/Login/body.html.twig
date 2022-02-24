@@ -1,0 +1,240 @@
+
+{% if language == 'spanish'%}
+<main id="main">
+    <section class="loginView-bg" style="padding: 0px; margin: 0px;">
+        <div class="container" id="container" style="padding-top: 0px; height: 100vh;">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-12 pl-0 pr-0 C-bg-darkgray modal-height front-login-bg text-center vertical-align-center" id="Login-OuterModal">
+                    <div class="row mr-4 col-12" style="height: 1px;"></div>
+                    <br><br><br><br><br>
+                    <h2 class="front-login-text title-text C-text-yellow mb-0 mt-2" id="OuterModal-Text">LOGIN</h2>
+                    <br><br><br><br><br>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 pl-0 pr-0" id="Login-InnerModal">
+                    <div class="col-12 pl-0 pr-0 back-modal-border text-center">
+                        <div class="modal-height" style="position: relative; display: inline-block;">
+                            <form class="p-3" role="form">
+                                <div class="form-group mb-3 pt-4">
+                                    <div style="opacity: 0.8;" class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text back-modal-bg-inputs"><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        <input class="form-control back-modal-bg-inputs content-text" id="email-input" placeholder="Correo" type="email" {% if (email != "")%} value={{ email }} {% endif %}>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div style="opacity: 0.8;" class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text back-modal-bg-inputs"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control back-modal-bg-inputs content-text" id="password-input" placeholder="Contraseña" type="password" {% if (password != "")%} value={{ password }} {% endif %}>
+                                    </div>
+                                </div>
+                                <div style="opacity: 0.8; float: left;" class="custom-control custom-control-alternative custom-checkbox">
+                                    <input class="custom-control-input" id="customCheckLogin" type="checkbox" {% if password!="" and email!="" %} checked {% endif %}>
+                                    <label class="custom-control-label" for="customCheckLogin">
+                                    <span class="content-text C-text-lightgray">Recuérdame</span>
+                                    </label>
+                                </div>
+                                <br>
+                                <div class="row mt-3">
+                                    <div style="opacity: 0.8;" class="col-12 text-left text-warning content-text">
+                                        <!-- Los elementos list-items los agregaremos con javascript -->
+                                        <ul class="error" id="errors-container"></ul>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button style="opacity: 0.9;"  type="button" class="btn C-bg-black my-4 btn-block" id="Login-btn"><span class="C-text-yellow">Iniciar Sesión</span></button>
+                                </div>
+                            </form>
+                            <div class="container">
+                                <div class="row justify-content-center back-modal-link-size">
+                                    <!-- Button trigger Forgot Password modal -->
+                                    <span class="content-text C-text-darkgray">¿Olvidaste tu</span><a href="#" data-toggle="modal" data-target="#exampleModal"><span class="title-text link-hover pl-1">Cuenta/Contraseña</span></a><span class="text-body">?</span>
+                                </div>
+                                <div class="row justify-content-center back-modal-link-size">
+                                    <span class="content-text C-text-darkgray">¿No tienes cuenta? </span><a href="#" id="crearCuenta"><span class="title-text link-hover pl-1">Crea una</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forgot Password Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="title-text C-text-black" id="exampleModalLabel">Recuperador de Contraseña</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label>
+                                    <span class="content-text C-text-darkgray">Porfavor, ingresa el correo con el que registraste tu cuenta.</span>
+                                </label>
+                                <input class="form-control back-modal-bg-inputs content-text" placeholder="Correo" type="email" id="changeEmail-input">
+                                <div style="float: right; font-size: 9pt;">
+                                    <span><small class="font-italic content-text">AVISO: Se enviará una contraseña temporal a su correo electrónico.</small></span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn C-bg-darkgray" data-dismiss="modal"><span class="title-text text-white">Cerrar</span></button>
+                                <button type="button" class="btn C-bg-black" id="reset-password"><span class="title-text C-text-yellow">Reiniciar Contraseña</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalTitle-Text"></h5>
+                                <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3 pl-4 pr-4 text-justify" id="modalMessage-Text"></div>
+                                <div class="text-center mb-2" id="modalIcon-Image"></div>
+                                <div class="modal-footer justify-content-center">
+                                    <button id="btn-modalGotIt" type="button" class="btn">Entendido</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+
+{% if language == 'english'%}
+    <main id="main">
+        <section class="loginView-bg" style="padding: 0px; margin: 0px;">
+            <div class="container" id="container" style="padding-top: 0px; height: 100vh;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-12 pl-0 pr-0 C-bg-darkgray modal-height front-login-bg text-center vertical-align-center" id="Login-OuterModal">
+                        <div class="row mr-4 col-12" style="height: 1px;"></div>
+                        <br><br><br><br><br>
+                        <h2 class="front-login-text title-text C-text-yellow mb-0 mt-2" id="OuterModal-Text">LOGIN</h2>
+                        <br><br><br><br><br>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 pl-0 pr-0" id="Login-InnerModal">
+                        <div class="col-12 pl-0 pr-0 back-modal-border text-center">
+                            <div class="modal-height" style="position: relative; display: inline-block;">
+                                <form class="p-3" role="form">
+                                    <div class="form-group mb-3 pt-4">
+                                        <div style="opacity: 0.8;" class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text back-modal-bg-inputs"><i class="ni ni-email-83"></i></span>
+                                            </div>
+                                            <input class="form-control back-modal-bg-inputs content-text" id="email-input" placeholder="Email" type="email" {% if (email != "")%} value={{ email }} {% endif %}>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div style="opacity: 0.8;" class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text back-modal-bg-inputs"><i class="ni ni-lock-circle-open"></i></span>
+                                            </div>
+                                            <input class="form-control back-modal-bg-inputs content-text" id="password-input" placeholder="Password" type="password" {% if (password != "")%} value={{ password }} {% endif %}>
+                                        </div>
+                                    </div>
+                                    <div style="opacity: 0.8; float: left;" class="custom-control custom-control-alternative custom-checkbox">
+                                        <input class="custom-control-input" id="customCheckLogin" type="checkbox" {% if password!="" and email!="" %} checked {% endif %}>
+                                        <label class="custom-control-label" for="customCheckLogin">
+                                            <span class="content-text C-text-lightgray">Remember me</span>
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="row mt-3">
+                                        <div style="opacity: 0.8;" class="col-12 text-left text-warning content-text">
+                                            <!-- Los elementos list-items los agregaremos con javascript -->
+                                            <ul class="error" id="errors-container"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button style="opacity: 0.9;"  type="button" class="btn C-bg-black my-4 btn-block" id="Login-btn"><span class="C-text-yellow">Log in</span></button>
+                                    </div>
+                                </form>
+                                <div class="container">
+                                    <div class="row justify-content-center back-modal-link-size">
+                                        <!-- Button trigger Forgot Password modal -->
+                                        <span class="content-text C-text-darkgray">Did you forgot your</span><a href="#" data-toggle="modal" data-target="#exampleModal"><span class="title-text link-hover pl-1">Account/Password</span></a><span class="text-body">?</span>
+                                    </div>
+                                    <div class="row justify-content-center back-modal-link-size">
+                                        <span class="content-text C-text-darkgray">You don't have an account? </span><a href="#" id="crearCuenta"><span class="title-text link-hover pl-1">Create one</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forgot Password Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="title-text C-text-black" id="exampleModalLabel">Password Retriever</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <label>
+                                        <span class="content-text C-text-darkgray">Please enter the email with which you registered your account.</span>
+                                    </label>
+                                    <input class="form-control back-modal-bg-inputs content-text" placeholder="Email" type="email" id="changeEmail-input">
+                                    <div style="float: right; font-size: 9pt;">
+                                        <span><small class="font-italic content-text">NOTICE: A temporary password will be sent to your email.</small></span>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn C-bg-darkgray" data-dismiss="modal"><span class="title-text text-white">Close</span></button>
+                                    <button type="button" class="btn C-bg-black" id="reset-password"><span class="title-text C-text-yellow">Reset Password</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitle-Text"></h5>
+                                    <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3 pl-4 pr-4 text-justify" id="modalMessage-Text"></div>
+                                    <div class="text-center mb-2" id="modalIcon-Image"></div>
+                                    <div class="modal-footer justify-content-center">
+                                        <button id="btn-modalGotIt" type="button" class="btn">Understood</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endif %}
+
+<!-- Loading Screen -->
+<div class="modal fade" id="loadingScreen" tabindex="-1" role="dialog" aria-labelledby="loadingScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; top: -50%;">
+        <div class="C-horizontalAlignCenter">
+            <div class="modal-header" style="visibility: hidden;">
+                <button id="btn-LoadingScreenClose" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <img src="/img/loadingScreen/Spin.gif" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+</div>

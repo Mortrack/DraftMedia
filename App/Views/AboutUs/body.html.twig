@@ -1,0 +1,138 @@
+
+{% if language == 'spanish'%}
+<main>
+    <section class="aboutUs-Container">
+        <div class="container">
+            <div class="pt-5 mt-5 mb-5 pb-5">
+                <div class="row justify-content-center mb-1">
+                    <h2 class="title-text C-text-darkgray text-center">Acerca de Nosotros</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-1 border-bottom border-dark"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                    <div class="col-9">
+                        <div class="row justify-content-center">
+                            <h2 class="title-text C-text-darkgray">Identidad</h2>
+                        </div>
+                        <div class="row">
+                            <p class="content-text C-text-lightgray text-justify">Creamos, mantenemos y producimos contenido digital para diferentes plataformas y/o redes sociales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                    <div class="col-9">
+                        <div class="row justify-content-center">
+                            <h2 class="title-text C-text-darkgray">Misión</h2>
+                        </div>
+                        <div class="row">
+                            <p class="content-text C-text-lightgray text-justify">Crear y dar mantenimiento de contenido creativo y de calidad a nuestros clientes para que con ello mejore su rating y logren ser competitivos en las diferentes plataformas y/o redes sociales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                    <div class="col-9">
+                        <div class="row justify-content-center">
+                            <h2 class="title-text C-text-darkgray">Visión</h2>
+                        </div>
+                        <div class="row">
+                            <p class="content-text C-text-lightgray text-justify">Llegar a ser de las mejores empresas de Marketing digital y ser líderes en calidad y diseño de contenido creativo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                    <div class="col-9">
+                        <div class="row justify-content-center">
+                            <h2 class="title-text C-text-darkgray">Valores</h2>
+                        </div>
+                        <div class="row justify-content-center">
+                            <ul class="content-text C-text-lightgray">
+                                <li><span>Responsabilidad</span></li>
+                                <li><span>Dedicación</span></li>
+                                <li><span>Puntualidad</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+
+{% if language == 'english'%}
+    <main>
+        <section class="aboutUs-Container">
+            <div class="container">
+                <div class="pt-5 mt-5 mb-5 pb-5">
+                    <div class="row justify-content-center mb-1">
+                        <h2 class="title-text C-text-darkgray text-center">About Us</h2>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-1 border-bottom border-dark"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                        <div class="col-9">
+                            <div class="row justify-content-center">
+                                <h2 class="title-text C-text-darkgray">Identity</h2>
+                            </div>
+                            <div class="row">
+                                <p class="content-text C-text-lightgray text-justify">We create, maintain and produce digital content for different platforms and / or social networks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                        <div class="col-9">
+                            <div class="row justify-content-center">
+                                <h2 class="title-text C-text-darkgray">Mission</h2>
+                            </div>
+                            <div class="row">
+                                <p class="content-text C-text-lightgray text-justify">Create and maintain creative and quality content for our clients so that they can improve their ratings and be competitive in the different platforms and / or social networks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                        <div class="col-9">
+                            <div class="row justify-content-center">
+                                <h2 class="title-text C-text-darkgray">Vision</h2>
+                            </div>
+                            <div class="row">
+                                <p class="content-text C-text-lightgray text-justify">To become one of the best digital marketing companies and be leaders in quality and creative content design.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-5" style="display: flex; justify-content: center;">
+                        <div class="col-9">
+                            <div class="row justify-content-center">
+                                <h2 class="title-text C-text-darkgray">Values</h2>
+                            </div>
+                            <div class="row justify-content-center">
+                                <ul class="content-text C-text-lightgray">
+                                    <li><span>Responsibility</span></li>
+                                    <li><span>Dedication</span></li>
+                                    <li><span>Puntuality</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endif %}
+
+<!-- Loading Screen -->
+<div class="modal fade" id="loadingScreen" tabindex="-1" role="dialog" aria-labelledby="loadingScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; top: -50%;">
+        <div class="C-horizontalAlignCenter">
+            <div class="modal-header" style="visibility: hidden;">
+                <button id="btn-LoadingScreenClose" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <img src="/img/loadingScreen/Spin.gif" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+</div>

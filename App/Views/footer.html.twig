@@ -1,0 +1,92 @@
+
+{% if language == 'spanish'%}
+<footer class="mb-5 has-cards">
+    <div class="container">
+        <div class="row row-grid align-items-center my-md">
+            <div class="col-lg-8">
+                <h3 class="title-text Cs-text-darkyellow mb-2 content-text">¡Gracias por tu interés en nosotros!</h3>
+                <h4 class="mb-0 content-text C-text-darkgray">Pongámonos en contacto.</h4>
+            </div>
+            <div class="col-lg-4 text-lg-center btn-wrapper">
+                <a target="_blank" href="#" id="footer-twitter" class="btn C-bg-black C-text-yellow btn-icon-only btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow us">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a target="_blank" href="#" id="footer-facebook" class="btn C-bg-black C-text-yellow btn-icon-only btn-round btn-lg" data-toggle="tooltip" data-original-title="Like us">
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+                <a target="_blank" href="#" id="footer-instagram" class="btn C-bg-black C-text-yellow btn-icon-only btn-lg btn-round" data-toggle="tooltip" data-original-title="Follow us">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                {#<a target="_blank" href="#" id="footer-github" class="btn C-bg-black text-white btn-icon-only btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">#}
+                    {#<i class="fa fa-github"></i>#}
+                {#</a>#}
+            </div>
+        </div>
+        <hr>
+        <div class="row align-items-center justify-content-md-between">
+            <div class="col-6">
+                <div class="copyright">
+                    &copy;
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>
+                    <a href="#" id="footer-home content-text">Draft Media</a>.
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="copyright text-right content-text">
+                    Credits, for usage of front-end framework, to
+                    <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a>
+                    {#and to MaxMind for usage of <a href="http://www.maxmind.com" target="_blank">GeoLite2</a>#}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endif %}
+
+{% if language == 'english'%}
+    <footer class="mb-5 has-cards">
+        <div class="container">
+            <div class="row row-grid align-items-center my-md">
+                <div class="col-lg-8">
+                    <h3 class="title-text Cs-text-darkyellow mb-2 content-text">Thanks for your interest on us!</h3>
+                    <h4 class="mb-0 content-text C-text-darkgray">Let's get in touch</h4>
+                </div>
+                <div class="col-lg-4 text-lg-center btn-wrapper">
+                    <a target="_blank" href="#" id="footer-twitter" class="btn C-bg-black C-text-yellow btn-icon-only btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow us">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a target="_blank" href="#" id="footer-facebook" class="btn C-bg-black C-text-yellow btn-icon-only btn-round btn-lg" data-toggle="tooltip" data-original-title="Like us">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                    <a target="_blank" href="#" id="footer-instagram" class="btn C-bg-black C-text-yellow btn-icon-only btn-lg btn-round" data-toggle="tooltip" data-original-title="Follow us">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    {#<a target="_blank" href="#" id="footer-github" class="btn C-bg-black text-white btn-icon-only btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">#}
+                    {#<i class="fa fa-github"></i>#}
+                    {#</a>#}
+                </div>
+            </div>
+            <hr>
+            <div class="row align-items-center justify-content-md-between">
+                <div class="col-6">
+                    <div class="copyright">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="#" id="footer-home content-text">Draft Media</a>.
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="copyright text-right content-text">
+                        Credits, for usage of front-end framework, to
+                        <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a>
+                        {#and to MaxMind for usage of <a href="http://www.maxmind.com" target="_blank">GeoLite2</a>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endif %}

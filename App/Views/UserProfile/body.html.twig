@@ -1,0 +1,246 @@
+
+{% if language == 'spanish'%}
+<main>
+    <section class="loginView-bg" style="padding: 0px; margin: 0px;">
+        <div class="container" id="container" style="padding-top: 0px; height: 100vh;">
+            <div class="row bg-white shadow border-0 justify-content-center" id="contentModal">
+                <div class="col-12 col-md-6 text-center mt-5">
+                    <h2 class="title-text C-text-black mb-3 ">Mi Perfil</h2>
+                    <div class="col-12">
+                        <div class="px-4">
+                            {% if user["role"] == "admin" and fileExists == true %}
+                                <img src="/img/profile/{{ user["first_name"] }} {{ user["last_name"] }}.jpg" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                            {% else %}
+                                <img src="/img/profile/UserProfile.png" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                            {% endif %}
+                            <div class="pt-4 text-center">
+                                <h5 class="title">
+                                    <span class="d-block mb-1 title-text C-text-black">{{ user["first_name"] }} {{ user["last_name"] }}</span>
+                                    <small class="fontsize_14px C-text-darkgray content-text">{{ user["email"] }}</small>
+                                    <br>
+                                    {% if user["role"] == "admin" %}
+                                        <small class="fontsize_14px C-text-darkgray content-text">TIPO DE CUENTA: Administrador</small>
+                                    {% endif %}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mt-5">
+                    <div class="col-12 content-text C-text-lightgray">
+                        <div class="row">
+                            <label for="first_name-input" class="C-text-darkgray">Nombre(s)</label>
+                            <input class="form-control content-text" id="first_name-input" placeholder="Nombre(s)" type="text" value="{{ user["first_name"] }}" disabled>
+                        </div>
+                        <div class="row">
+                            <label for="last_name-input" class="C-text-darkgray">Apellido(s)</label>
+                            <input class="form-control content-text" id="last_name-input" placeholder="Apellido(s)" type="text" value="{{ user["last_name"] }}" disabled>
+                        </div>
+                        <div class="row">
+                            <label for="email-input" class="C-text-darkgray">Correo</label>
+                            <input class="form-control content-text" id="email-input" placeholder="Correo" type="text" value="{{ user["email"] }}" disabled>
+                        </div>
+                        <div class="row">
+                            <div style="opacity: 0.8;" class="col-12 text-left text-warning content-text">
+                                <!-- Los elementos list-items los agregaremos con javascript -->
+                                <ul class="error" id="errors-container"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 content-text C-text-lightgray mt-3 mb-5 px-0 mx-0">
+                        <!-- Button trigger Forgot Password modal -->
+                        <button class="btn C-bg-darkgray col-12 mb-3" data-toggle="modal" data-target="#changePasswordModal"><span class="title-text text-white">Cambiar Contraseña</span></button>
+                        <button class="btn C-bg-darkgray col-12" id="editUserProfile"><span class="title-text text-white">Editar Mi perfil</span></button>
+                        <button class="btn C-bg-black col-12" id="saveChanges"><span class="title-text C-text-yellow">Guardar Cambios</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Change Password Modal -->
+            <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="title-text C-text-black" id="changePasswordModalLabel">Cambio de Contraseña</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label>
+                                <span class="content-text C-text-darkgray">Ingresa tu contraseña actual.</span>
+                            </label>
+                            <input class="form-control back-modal-bg-inputs content-text" placeholder="Contraseña Actual" type="password" id="actualPassword-input">
+                            <label class="mt-4">
+                                <span class="content-text C-text-darkgray">Ingresa tu nueva contraseña.</span>
+                            </label>
+                            <input class="form-control back-modal-bg-inputs content-text" placeholder="Nueva Contraseña" type="password" id="newPassword1-input">
+                            <input class="form-control back-modal-bg-inputs content-text" placeholder="Repite tu Nueva Contraseña" type="password" id="newPassword2-input">
+                            <div class="row">
+                                <div style="opacity: 0.8;" class="col-12 text-left text-warning content-text mt-3">
+                                    <!-- Los elementos list-items los agregaremos con javascript -->
+                                    <ul class="error text-justify" id="errors-container-newPassword"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn C-bg-darkgray" data-dismiss="modal"><span class="title-text text-white">Cerrar</span></button>
+                            <button type="button" class="btn C-bg-black" id="changePassword"><span class="title-text C-text-yellow">Cambiar Contraseña</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle-Text"></h5>
+                            <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3 pl-4 pr-4 text-justify" id="modalMessage-Text"></div>
+                            <div class="text-center mb-2" id="modalIcon-Image"></div>
+                            <div class="modal-footer justify-content-center">
+                                <button id="btn-modalGotIt" type="button" class="btn">Entendido</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+
+{% if language == 'english'%}
+    <main>
+        <section class="loginView-bg" style="padding: 0px; margin: 0px;">
+            <div class="container" id="container" style="padding-top: 0px; height: 100vh;">
+                <div class="row bg-white shadow border-0 justify-content-center" id="contentModal">
+                    <div class="col-12 col-md-6 text-center mt-5">
+                        <h2 class="title-text C-text-black mb-3 ">My Profile</h2>
+                        <div class="col-12">
+                            <div class="px-4">
+                                {% if user["role"] == "admin" and fileExists == true %}
+                                    <img src="/img/profile/{{ user["first_name"] }} {{ user["last_name"] }}.jpg" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                                {% else %}
+                                    <img src="/img/profile/UserProfile.png" class="rounded-circle img-center img-fluid shadow shadow-lg--hover" style="width: 200px;">
+                                {% endif %}
+                                <div class="pt-4 text-center">
+                                    <h5 class="title">
+                                        <span class="d-block mb-1 title-text C-text-black">{{ user["first_name"] }} {{ user["last_name"] }}</span>
+                                        <small class="fontsize_14px C-text-darkgray content-text">{{ user["email"] }}</small>
+                                        <br>
+                                        {% if user["role"] == "admin" %}
+                                            <small class="fontsize_14px C-text-darkgray content-text">TYPE OF ACCOUNT: Administrator</small>
+                                        {% endif %}
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 mt-5">
+                        <div class="col-12 content-text C-text-lightgray">
+                            <div class="row">
+                                <label for="first_name-input" class="C-text-darkgray">Name(s)</label>
+                                <input class="form-control content-text" id="first_name-input" placeholder="Name(s)" type="text" value="{{ user["first_name"] }}" disabled>
+                            </div>
+                            <div class="row">
+                                <label for="last_name-input" class="C-text-darkgray">Last Name</label>
+                                <input class="form-control content-text" id="last_name-input" placeholder="Last Name" type="text" value="{{ user["last_name"] }}" disabled>
+                            </div>
+                            <div class="row">
+                                <label for="email-input" class="C-text-darkgray">Email</label>
+                                <input class="form-control content-text" id="email-input" placeholder="Email" type="text" value="{{ user["email"] }}" disabled>
+                            </div>
+                            <div class="row">
+                                <div style="opacity: 0.8;" class="col-12 text-left text-warning content-text">
+                                    <!-- Los elementos list-items los agregaremos con javascript -->
+                                    <ul class="error" id="errors-container"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 content-text C-text-lightgray mt-3 mb-5 px-0 mx-0">
+                            <!-- Button trigger Forgot Password modal -->
+                            <button class="btn C-bg-darkgray col-12 mb-3" data-toggle="modal" data-target="#changePasswordModal"><span class="title-text text-white">Change Password</span></button>
+                            <button class="btn C-bg-darkgray col-12" id="editUserProfile"><span class="title-text text-white">Edit My Profile</span></button>
+                            <button class="btn C-bg-black col-12" id="saveChanges"><span class="title-text C-text-yellow">Save Changes</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Change Password Modal -->
+                <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="title-text C-text-black" id="changePasswordModalLabel">Change of Password</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label>
+                                    <span class="content-text C-text-darkgray">Enter your actual password.</span>
+                                </label>
+                                <input class="form-control back-modal-bg-inputs content-text" placeholder="Actual Password" type="password" id="actualPassword-input">
+                                <label class="mt-4">
+                                    <span class="content-text C-text-darkgray">Enter your new password.</span>
+                                </label>
+                                <input class="form-control back-modal-bg-inputs content-text" placeholder="New Password" type="password" id="newPassword1-input">
+                                <input class="form-control back-modal-bg-inputs content-text" placeholder="Repeat your New Password" type="password" id="newPassword2-input">
+                                <div class="row">
+                                    <div style="opacity: 0.8;" class="col-12 text-left text-warning content-text mt-3">
+                                        <!-- Los elementos list-items los agregaremos con javascript -->
+                                        <ul class="error text-justify" id="errors-container-newPassword"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn C-bg-darkgray" data-dismiss="modal"><span class="title-text text-white">Close</span></button>
+                                <button type="button" class="btn C-bg-black" id="changePassword"><span class="title-text C-text-yellow">Change Password</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalTitle-Text"></h5>
+                                <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3 pl-4 pr-4 text-justify" id="modalMessage-Text"></div>
+                                <div class="text-center mb-2" id="modalIcon-Image"></div>
+                                <div class="modal-footer justify-content-center">
+                                    <button id="btn-modalGotIt" type="button" class="btn">Understood</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endif %}
+
+<!-- Loading Screen -->
+<div class="modal fade" id="loadingScreen" tabindex="-1" role="dialog" aria-labelledby="loadingScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; top: -50%;">
+        <div class="C-horizontalAlignCenter">
+            <div class="modal-header" style="visibility: hidden;">
+                <button id="btn-LoadingScreenClose" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <img src="/img/loadingScreen/Spin.gif" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+</div>

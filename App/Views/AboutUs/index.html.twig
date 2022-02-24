@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block styles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {#ARGON THEME#}
+    <link rel="stylesheet" href="/css/Pricing/layout.css">
+    <!-- FONTS -->
+    <!-- ICONS -->
+    <link href="/css/assets/argonTheme/nucleo/css/nucleo.css" rel="stylesheet"> {#ARGON THEME#}
+    <link rel="stylesheet" href="/css/assets/argonTheme/font-awesome/css/font-awesome.min.css"> {#ARGON THEME#}
+    <!-- THEME CSS -->
+    <link rel="stylesheet" href="/css/assets/argonTheme/argon/argon.min.css"> {#ARGON THEME#}
+    <script src="/js/jquery-3.1.1.min.js"></script>
+{% endblock %}
+
+{% block title %}DraftMedia: Acerca De{% endblock %}
+
+{% block header %}
+    {% include('/header.html.twig') %}
+{% endblock %}
+
+{% block body %}
+    {% include('/AboutUs/body.html.twig') %}
+{% endblock %}
+
+{% block footer %}
+    {% include('/footer.html.twig') %}
+{% endblock %}
+
+{% block javascript %}
+    <!-- CORE -->
+    <script src="/js/assets/argonTheme/popper/popper.min.js"></script> {#ARGON THEME#}
+    <script src="/js/assets/argonTheme/bootstrap/bootstrap.min.js"></script> {#ARGON THEME#}
+    <!-- THEME -->
+    <script src="/js/assets/argonTheme/argon/argon.min.js"></script> {#ARGON THEME#}
+    <!-- JS CUSTOMIZED FILES -->
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/AboutUs/index.js"></script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block styles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {#ARGON THEME#}
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="/fonts/blackDashboard/nucleo.woff2">
+    <!-- Nucleo Icons -->
+    <link href="/css/assets/blackDashboard/nucleo-icons.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="/css/Admin/Home/layout.css" rel="stylesheet" />
+    <link href="/css/assets/blackDashboard/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/assets/blackDashboard/black-dashboard.min.css" rel="stylesheet" />
+    <script src="/js/jquery-3.1.1.min.js"></script>
+{% endblock %}
+
+{% block title %}Draft Media: Admin Summary{% endblock %}
+
+{% block header %}
+    {% include('/Admin/header.html.twig') %}
+{% endblock %}
+
+{% block body %}
+    {% include('/Admin/Summary/body.html.twig') %}
+{% endblock %}
+
+{% block footer %}
+    {% include('/Admin/footer.html.twig') %}
+{% endblock %}
+
+{% block javascript %}
+<!--   Core JS Files   -->
+{#<script src="../assets/js/core/jquery.min.js"></script>#}
+{#<script src="../assets/js/core/popper.min.js"></script>#}
+{#<script src="../assets/js/core/bootstrap.min.js"></script>#}
+<script src="/js/assets/blackDashboardTheme/perfectScrollbar/perfect-scrollbar.jquery.min.js"></script>
+<!--  Google Maps Plugin    -->
+{#<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>#}
+<!-- Chart JS -->
+<script src="/js/assets/blackDashboardTheme/charts/chartjs.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="/js/assets/blackDashboardTheme/bootstrapNotify/bootstrap-notify.js"></script>
+<!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="/js/assets/blackDashboardTheme/black-dashboard.min.js" type="text/javascript"></script>
+
+<!-- Charts Data (I MADE THIS CODE) -->
+<script src="/js/Admin/Home/performanceChart.js"></script>
+<script src="/js/Admin/Home/totalShipmentsChart.js"></script>
+<script src="/js/Admin/Home/dailySalesChart.js"></script>
+<script src="/js/Admin/Home/completedTasksChart.js"></script>
+
+{% endblock %}

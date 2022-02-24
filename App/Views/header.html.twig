@@ -1,0 +1,224 @@
+
+{% if language == 'spanish'%}
+<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
+    <div class="container">
+        {#<!-- Logo -->#}
+        <a href="#" id="header-home">
+            <img src="/img/Logo/DraftMediaLogo.png" height="50px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {#<!-- Nav bar items container -->#}
+        <div class="navbar-collapse collapse justify-content-end" id="navbar_global">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand">
+                        <a class="navbar-brand" href="#">
+                            <img class="DraftMedia-Logo" src="/img/Logo/DraftMediaLogo2.png">
+                        </a>
+                    </div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ul class="menu navbar-nav navbar-nav-hover align-items-lg-center">
+                <div class="vertical-effectAling-fix"></div>
+                <li class="nav-item dropdown">
+                    <a href="#" id="header-a1" class="nav-link" data-toggle="dropdown" role="button">
+                        <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                        <span class="nav-link-inner--text title-text">Acerca De</span>
+                    </a>
+                    <div class="row justify-content-center vertical-align-center">
+                        <span id="headerA1-dot"></span>
+                        <div class="dot-line" id="headerA1-line"></div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" id="header-a2" class="nav-link" data-toggle="dropdown" role="button">
+                        <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                        <span class="nav-link-inner--text title-text">Servicios</span>
+                    </a>
+                    <div class="row justify-content-center vertical-align-center">
+                        <span id="headerA2-dot"></span>
+                        <div class="dot-line" id="headerA2-line"></div>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" id="header-a3" class="nav-link" data-toggle="dropdown" role="button">
+                        <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                        <span class="nav-link-inner--text title-text">Precios</span>
+                    </a>
+                    <div class="row justify-content-center vertical-align-center">
+                        <span id="headerA3-dot"></span>
+                        <div class="dot-line" id="headerA3-line"></div>
+                    </div>
+                </li>
+                {#<li class="nav-item dropdown">#}
+                    {#<a href="#" id="header-a4" class="nav-link" data-toggle="dropdown" role="button">#}
+                        {#<img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">#}
+                        {#<span class="nav-link-inner--text title-text"><del>Portafolio</del></span>#}
+                    {#</a>#}
+                    {#<div class="row justify-content-center vertical-align-center">#}
+                        {#<span id="headerA4-dot"></span>#}
+                        {#<div class="dot-line" id="headerA4-line"></div>#}
+                    {#</div>#}
+                {#</li>#}
+                {% if isUserLoggedIn == false %}
+                    <li class="nav-item dropdown">
+                        <a href="#" id="header-a5" class="nav-link" data-toggle="dropdown" role="button">
+                            <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                            <span class="nav-link-inner--text title-text">Login</span>
+                        </a>
+                        <div class="row justify-content-center vertical-align-center">
+                            <span id="headerA5-dot"></span>
+                            <div class="dot-line" id="headerA5-line"></div>
+                        </div>
+                    </li>
+                {% endif %}
+                {% if isUserLoggedIn == true %}
+                    <li class="nav-item dropdown">
+                        <a href="#" id="header-a6" class="nav-link" data-toggle="dropdown" role="button">
+                            <i class="ni ni-single-02"></i>
+                            <span class="nav-link-inner--text title-text">{{ user_firstname }}</span>
+                            <img src="/img/icons/icons8-expand-arrow-filled-50.png" width="10px" class="ml-1">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item content-text" id="header-myProfile">Mi perfil</a>
+                            <a href="#" class="dropdown-item content-text" id="header-MyRequestedServices">Ver mis pedidos</a>
+                            <a href="#" class="dropdown-item content-text" id="header-requestService">Solicitar un Servicio</a>
+                            <hr class="m-0 p-0">
+                            <a href="#" class="dropdown-item content-text" id="header-closeSession">Cerrar Sesión</a>
+                        </div>
+                    </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    <div class="ml-5" id="header-a7">
+                        <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                        <a href="#" id="english-language"><span class="nav-link-inner--text title-text fontsize_10px" id="en-text">En</span></a>
+                        <span class="text-white fontsize_10px" id="slash-text"> / </span>
+                        <a href="#" id="spanish-language"><span class="nav-link-inner--text title-text fontsize_10px" id="es-text">Es</span></a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+{% endif %}
+
+{% if language == 'english'%}
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light">
+        <div class="container">
+            {#<!-- Logo -->#}
+            <a href="#" id="header-home">
+                <img src="/img/Logo/DraftMediaLogo.png" height="50px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {#<!-- Nav bar items container -->#}
+            <div class="navbar-collapse collapse justify-content-end" id="navbar_global">
+                <div class="navbar-collapse-header">
+                    <div class="row">
+                        <div class="col-6 collapse-brand">
+                            <a class="navbar-brand" href="#">
+                                <img class="DraftMedia-Logo" src="/img/Logo/DraftMediaLogo2.png">
+                            </a>
+                        </div>
+                        <div class="col-6 collapse-close">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="menu navbar-nav navbar-nav-hover align-items-lg-center">
+                    <div class="vertical-effectAling-fix"></div>
+                    <li class="nav-item dropdown">
+                        <a href="#" id="header-a1" class="nav-link" data-toggle="dropdown" role="button">
+                            <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                            <span class="nav-link-inner--text title-text">About us</span>
+                        </a>
+                        <div class="row justify-content-center vertical-align-center">
+                            <span id="headerA1-dot"></span>
+                            <div class="dot-line" id="headerA1-line"></div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" id="header-a2" class="nav-link" data-toggle="dropdown" role="button">
+                            <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                            <span class="nav-link-inner--text title-text">Services</span>
+                        </a>
+                        <div class="row justify-content-center vertical-align-center">
+                            <span id="headerA2-dot"></span>
+                            <div class="dot-line" id="headerA2-line"></div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" id="header-a3" class="nav-link" data-toggle="dropdown" role="button">
+                            <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                            <span class="nav-link-inner--text title-text">Prices</span>
+                        </a>
+                        <div class="row justify-content-center vertical-align-center">
+                            <span id="headerA3-dot"></span>
+                            <div class="dot-line" id="headerA3-line"></div>
+                        </div>
+                    </li>
+                    {#<li class="nav-item dropdown">#}
+                    {#<a href="#" id="header-a4" class="nav-link" data-toggle="dropdown" role="button">#}
+                    {#<img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">#}
+                    {#<span class="nav-link-inner--text title-text"><del>Portafolio</del></span>#}
+                    {#</a>#}
+                    {#<div class="row justify-content-center vertical-align-center">#}
+                    {#<span id="headerA4-dot"></span>#}
+                    {#<div class="dot-line" id="headerA4-line"></div>#}
+                    {#</div>#}
+                    {#</li>#}
+                    {% if isUserLoggedIn == false %}
+                        <li class="nav-item dropdown">
+                            <a href="#" id="header-a5" class="nav-link" data-toggle="dropdown" role="button">
+                                <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                                <span class="nav-link-inner--text title-text">Login</span>
+                            </a>
+                            <div class="row justify-content-center vertical-align-center">
+                                <span id="headerA5-dot"></span>
+                                <div class="dot-line" id="headerA5-line"></div>
+                            </div>
+                        </li>
+                    {% endif %}
+                    {% if isUserLoggedIn == true %}
+                        <li class="nav-item dropdown">
+                            <a href="#" id="header-a6" class="nav-link" data-toggle="dropdown" role="button">
+                                <i class="ni ni-single-02"></i>
+                                <span class="nav-link-inner--text title-text">{{ user_firstname }}</span>
+                                <img src="/img/icons/icons8-expand-arrow-filled-50.png" width="10px" class="ml-1">
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item content-text" id="header-myProfile">My profile</a>
+                                <a href="#" class="dropdown-item content-text" id="header-MyRequestedServices">See my orders</a>
+                                <a href="#" class="dropdown-item content-text" id="header-requestService">Request a Service</a>
+                                <hr class="m-0 p-0">
+                                <a href="#" class="dropdown-item content-text" id="header-closeSession">Sign out</a>
+                            </div>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item dropdown">
+                        <div class="ml-5" id="header-a7">
+                            <img src="/img/icons/icons8-select-32.png" class="d-lg-none" width="17px">
+                            <a href="#" id="english-language"><span class="nav-link-inner--text title-text fontsize_10px" id="en-text">En</span></a>
+                            <span class="fontsize_10px" id="slash-text"> / </span>
+                            <a href="#" id="spanish-language"><span class="nav-link-inner--text title-text fontsize_10px" id="es-text">Es</span></a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+{% endif %}

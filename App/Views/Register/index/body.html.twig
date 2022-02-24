@@ -1,0 +1,270 @@
+
+{% if language == 'spanish'%}
+<main>
+    <section class="section section-shaped section-lg my-0">
+        <div class="shape registerView-bg">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="container pt-lg-md">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card bg-secondary shadow border-0">
+                        <div class="card-header bg-white">
+                            <div class="text-muted text-center mb-3">
+                                <small class="content-text C-text-darkgray">Regístrate con</small>
+                                <h2 class="pt-2 title-text C-text-black fontsize_24px">DRAFT MEDIA ENGINE</h2>
+                            </div>
+                            {#<div class="text-center">#}
+                                {#<a href="#" class="btn btn-neutral btn-icon mr-4">#}
+                    {#<span class="btn-inner--icon">#}
+                      {#<img src="../assets/img/icons/common/github.svg">#}
+                    {#</span>#}
+                                    {#<span class="btn-inner--text">Github</span>#}
+                                {#</a>#}
+                                {#<a href="#" class="btn btn-neutral btn-icon">#}
+                    {#<span class="btn-inner--icon">#}
+                      {#<img src="../assets/img/icons/common/google.svg">#}
+                    {#</span>#}
+                                    {#<span class="btn-inner--text">Google</span>#}
+                                {#</a>#}
+                            {#</div>#}
+                        </div>
+                        <div class="card-body px-lg-5 py-lg-5">
+                            <form role="form">
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                        </div>
+                                        <input class="form-control content-text" placeholder="Nombre(s)" type="text" id="firstname-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                        </div>
+                                        <input class="form-control content-text" placeholder="Apellido(s)" type="text" id="lastname-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                        </div>
+                                        <input class="form-control content-text" placeholder="Correo" type="email" id="email-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control content-text" placeholder="Contraseña" type="password" id="password1-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                        </div>
+                                        <input class="form-control content-text" placeholder="Contraseña" type="password" id="password2-input">
+                                    </div>
+                                </div>
+                                <div class="text-muted font-italic">
+                                    <small class="content-text C-text-darkgray">Seguridad de la Contraseña:
+                                        <span id="password_security-level" class="font-weight-700"></span>
+                                    </small>
+                                </div>
+                                <div class="row my-4">
+                                    <div class="col-12">
+                                        <div class="custom-control custom-control-alternative custom-checkbox">
+                                            <input class="custom-control-input" id="customCheckRegister-checkbox" type="checkbox">
+                                            <label class="custom-control-label" for="customCheckRegister-checkbox">
+                                                <span class="content-text fontsize_10px">Yo acepto las
+                                                    <a href="#" id="PoliticasPrivacidad-Link" target="_blank"><span class="title-text fontsize_12px">Políticas de Privacidad</span></a>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <!-- Los elementos list-items los agregaremos con javascript -->
+                                        <ul class="error content-text text-warning" id="errors-container"></ul>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn C-bg-black C-text-yellow mt-4" id="registerAccount">Crear Cuenta</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title title-text" id="modalTitle-Text"></h5>
+                        <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 pl-4 pr-4 text-justify content-text C-text-darkgray" id="modalMessage-Text"></div>
+                        <div class="text-center mb-2" id="modalIcon-Image"></div>
+                    <div class="modal-footer justify-content-center">
+                        <button id="btn-modalGotIt" type="button" class="btn title-text text-white">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endif %}
+
+{% if language == 'english'%}
+    <main>
+        <section class="section section-shaped section-lg my-0">
+            <div class="shape registerView-bg">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="container pt-lg-md">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card bg-secondary shadow border-0">
+                            <div class="card-header bg-white">
+                                <div class="text-muted text-center mb-3">
+                                    <small class="content-text C-text-darkgray">Register with</small>
+                                    <h2 class="pt-2 title-text C-text-black fontsize_24px">DRAFT MEDIA ENGINE</h2>
+                                </div>
+                            </div>
+                            <div class="card-body px-lg-5 py-lg-5">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                            </div>
+                                            <input class="form-control content-text" placeholder="Name(s)" type="text" id="firstname-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                            </div>
+                                            <input class="form-control content-text" placeholder="Last Name" type="text" id="lastname-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-alternative mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                            </div>
+                                            <input class="form-control content-text" placeholder="Email" type="email" id="email-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            </div>
+                                            <input class="form-control content-text" placeholder="Password" type="password" id="password1-input">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group input-group-alternative">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            </div>
+                                            <input class="form-control content-text" placeholder="Password" type="password" id="password2-input">
+                                        </div>
+                                    </div>
+                                    <div class="text-muted font-italic">
+                                        <small class="content-text C-text-darkgray">Security of the password:
+                                            <span id="password_security-level" class="font-weight-700"></span>
+                                        </small>
+                                    </div>
+                                    <div class="row my-4">
+                                        <div class="col-12">
+                                            <div class="custom-control custom-control-alternative custom-checkbox">
+                                                <input class="custom-control-input" id="customCheckRegister-checkbox" type="checkbox">
+                                                <label class="custom-control-label" for="customCheckRegister-checkbox">
+                                                <span class="content-text fontsize_10px">I accept the
+                                                    <a href="#" id="PoliticasPrivacidad-Link" target="_blank"><span class="title-text fontsize_12px">Privacy Politics</span></a>
+                                                </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- Los elementos list-items los agregaremos con javascript -->
+                                            <ul class="error content-text text-warning" id="errors-container"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn C-bg-black C-text-yellow mt-4" id="registerAccount">Create Account</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title title-text" id="modalTitle-Text"></h5>
+                            <button id="btn-modalClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3 pl-4 pr-4 text-justify content-text C-text-darkgray" id="modalMessage-Text"></div>
+                            <div class="text-center mb-2" id="modalIcon-Image"></div>
+                            <div class="modal-footer justify-content-center">
+                                <button id="btn-modalGotIt" type="button" class="btn title-text text-white">Understood</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+{% endif %}
+
+<!-- Loading Screen -->
+<div class="modal fade" id="loadingScreen" tabindex="-1" role="dialog" aria-labelledby="loadingScreenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; top: -50%;">
+        <div class="C-horizontalAlignCenter">
+            <div class="modal-header" style="visibility: hidden;">
+                <button id="btn-LoadingScreenClose" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <img src="/img/loadingScreen/Spin.gif" style="width: 50px; height: 50px;">
+        </div>
+    </div>
+</div>
